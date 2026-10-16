@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.paperweight.ffm.ui.MainFrame">
+  <grid id="27dc6" binding="contentPane" default-binding="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="1000" height="640"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="e3588" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="a1f10" layout-manager="FlowLayout" hgap="6" vgap="4" flow-align="0">
+            <constraints border-constraint="North"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="c1a01" class="javax.swing.JButton" binding="refreshButton">
+                <constraints/>
+                <properties>
+                  <text value="刷新列表"/>
+                </properties>
+              </component>
+              <component id="c1a02" class="javax.swing.JButton" binding="deleteButton">
+                <constraints/>
+                <properties>
+                  <text value="删除选中"/>
+                </properties>
+              </component>
+              <component id="c1a03" class="javax.swing.JButton" binding="cleanupButton">
+                <constraints/>
+                <properties>
+                  <text value="清理孤立防火墙规则"/>
+                </properties>
+              </component>
+              <component id="c1a04" class="javax.swing.JButton" binding="deleteAllButton">
+                <constraints/>
+                <properties>
+                  <text value="清空全部转发"/>
+                </properties>
+              </component>
+              <component id="c1a05" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <enabled value="false"/>
+                  <text value="提示：监听地址填 0.0.0.0 / :: 表示监听本机所有地址"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="b2f20" binding="formPanel" layout-manager="FlowLayout" hgap="6" vgap="4" flow-align="0">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="d1b01" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="转发类型"/>
+                </properties>
+              </component>
+              <component id="d1b02" class="javax.swing.JComboBox" binding="typeCombo">
+                <constraints/>
+                <properties>
+                  <toolTipText value="选择转发方向；常用的是 IPv4 → IPv4"/>
+                </properties>
+              </component>
+              <component id="d1b03" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="协议"/>
+                </properties>
+              </component>
+              <component id="d1b04" class="javax.swing.JComboBox" binding="protocolCombo">
+                <constraints/>
+                <properties>
+                  <toolTipText value="portproxy 支持 protocol=tcp / udp"/>
+                </properties>
+              </component>
+              <component id="d1b05" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="监听地址"/>
+                </properties>
+              </component>
+              <component id="d1b06" class="javax.swing.JComboBox" binding="listenAddressCombo">
+                <constraints/>
+                <properties>
+                  <toolTipText value="0.0.0.0 表示监听本机所有 IPv4 地址，:: 表示监听本机所有 IPv6 地址"/>
+                </properties>
+              </component>
+              <component id="d1b07" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="监听端口"/>
+                </properties>
+              </component>
+              <component id="d1b08" class="javax.swing.JTextField" binding="listenPortField">
+                <constraints/>
+                <properties>
+                  <columns value="6"/>
+                  <toolTipText value="本机对外侦听的端口，范围 1 - 65535"/>
+                </properties>
+              </component>
+              <component id="d1b09" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="转发地址"/>
+                </properties>
+              </component>
+              <component id="d1b10" class="javax.swing.JTextField" binding="connectAddressField">
+                <constraints/>
+                <properties>
+                  <columns value="16"/>
+                  <toolTipText value="流量最终转发到的目标 IP（必须是 IP 字面量，不能填域名）"/>
+                </properties>
+              </component>
+              <component id="d1b11" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="转发端口"/>
+                </properties>
+              </component>
+              <component id="d1b12" class="javax.swing.JTextField" binding="connectPortField">
+                <constraints/>
+                <properties>
+                  <columns value="6"/>
+                  <toolTipText value="目标端口，范围 1 - 65535"/>
+                </properties>
+              </component>
+              <component id="d1b13" class="javax.swing.JCheckBox" binding="firewallCheck">
+                <constraints/>
+                <properties>
+                  <selected value="true"/>
+                  <text value="自动添加防火墙入站放行规则"/>
+                  <toolTipText value="添加转发后自动执行 netsh advfirewall firewall add rule，放行对应入站端口"/>
+                </properties>
+              </component>
+              <component id="d1b14" class="javax.swing.JCheckBox" binding="restrictRemoteCheck">
+                <constraints/>
+                <properties>
+                  <text value="入站规则仅允许来自转发目标地址的流量"/>
+                  <toolTipText value="勾选后入站规则的 remoteip 会限制为转发目标地址"/>
+                </properties>
+              </component>
+              <component id="d1b15" class="javax.swing.JButton" binding="addButton">
+                <constraints/>
+                <properties>
+                  <text value="添加转发"/>
+                </properties>
+              </component>
+              <component id="d1b16" class="javax.swing.JButton" binding="clearFormButton">
+                <constraints/>
+                <properties>
+                  <text value="清空表单"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <scrollpane id="f4c30" binding="tableScrollPane">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="e1d01" class="javax.swing.JTable" binding="table">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <grid id="c5a40" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="f1e01" class="org.paperweight.ffm.ui.LogPanel" binding="log">
+            <constraints border-constraint="Center"/>
+            <properties/>
+          </component>
+          <grid id="d6b50" binding="statusPanel" layout-manager="BorderLayout" hgap="8" vgap="0">
+            <constraints border-constraint="South"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="a2c01" class="javax.swing.JLabel" binding="statusLabel">
+                <constraints border-constraint="West"/>
+                <properties>
+                  <text value=" "/>
+                </properties>
+              </component>
+              <grid id="e7c60" layout-manager="FlowLayout" hgap="8" vgap="0" flow-align="2">
+                <constraints border-constraint="East"/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="b2c02" class="javax.swing.JLabel" binding="helperLabel">
+                    <constraints/>
+                    <properties>
+                      <text value=" "/>
+                    </properties>
+                  </component>
+                  <component id="c3c03" class="javax.swing.JButton" binding="elevateButton">
+                    <constraints/>
+                    <properties>
+                      <text value="以管理员身份重启"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
